@@ -10,4 +10,5 @@ urlpatterns = [
     path('registerNE', registerNE, name='registerNE'),
     path('registerE', registerE, name='registerE'),
     path('storeDetails', storeDetails, name='storeDetails'),
+    path('sendIn', sendIn, name='sendIn'),
 ]

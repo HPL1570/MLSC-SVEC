@@ -42,26 +42,27 @@
     <section class="contact" id="contact">
         <h2 style="margin-top: 60px;"class="heading">Register for Web Development Workshop <span>today!</span></h2>
     
-        <form action="#">
+        <form method="POST" action="sendIn">
+            {% csrf_token %}
             <div style="margin-top: 0px;"class="input-box">
                 <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" placeholder="Full Name" name="name" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Email" required>
+                    <input type="text" placeholder="Email" name="mail" required>
                     <span class="focus"></span>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Roll Number" required>
+                    <input type="text" placeholder="Roll Number" name="roll" required>
                     <span class="focus"></span>
                 <div class="input-field">
-                    <input type="text" placeholder="Branch" required>
+                    <input type="text" placeholder="Branch and Section eg.Brance-Sec" name="branch" required>
                 <span class="focus"></span>
                 </div>
                 <div class="input-field">
                     <div class="custom-dropdown">
-                        <select required>
+                        <select name="event" required>
                             <option value="" disabled selected>Select Your Sub Event</option>
                             <option value="event1">Web Development Workshop</option>
                             <!-- Add more options as needed -->

@@ -18,3 +18,9 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+class EventRe(models.Model):
+    name=models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    rollnumber=models.CharField(max_length=10)
+    branch=models.CharField(max_length=10)
+    event=models.CharField(max_length=50)
