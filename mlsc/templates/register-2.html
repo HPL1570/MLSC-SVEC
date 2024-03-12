@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{%static 'images/home/MLSC Logo.png' %}" />
+    <link rel="apple-touch-icon" href="{%static 'images/home/MLSC Logo.png' %}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Learn Student Club</title>
+
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="{%static 'images/home/MLSC Logo.png' %}" alt="Logo" class="team-logo">
+            <a href="{% url 'home' %}" class="logo">Microsoft Learn Student Club<span class="animate" style="--i:1;"></span></a>
+        </div>
+
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+
+        <nav class="navbar">
+            <a href="{% url 'home' %}" id="index-link" class="active">Home</a>
+            <a href="{% url 'team' %}" id="teams-links" >Team</a>
+            <a href="{% url 'event' %}" id="events-link">Events</a>
+            <a href="{% url 'blog' %}" id="blogs-link">Blog</a>
+            <a href="{% url 'project' %}" id="projects-link">Projects</a>
+            <a href="#contact" id="teams-link"></a>
+
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+    </header>
+
+    <section class="contact" id="contact">
+        <h2 style="margin-top: 60px;"class="heading">Register for Web Development Workshop <span>today!</span></h2>
+    
+        <form action="#">
+            <div style="margin-top: 0px;"class="input-box">
+                <div class="input-field">
+                    <input type="text" placeholder="Full Name" required>
+                    <span class="focus"></span>
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Email" required>
+                    <span class="focus"></span>
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Roll Number" required>
+                    <span class="focus"></span>
+                <div class="input-field">
+                    <input type="text" placeholder="Branch" required>
+                <span class="focus"></span>
+                </div>
+                <div class="input-field">
+                    <div class="custom-dropdown">
+                        <select required>
+                            <option value="" disabled selected>Select Your Sub Event</option>
+                            <option value="event1">Web Development Workshop</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                        <span class="focus"></span>
+                    </div>
+                </div>
+    
+                <div class="btn-box btns">
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    
+
+        <!-- footer design -->
+        <footer class="footer">
+    
+            <div class="footer-iconTop">
+                <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+            </div>
+        </footer>
+    
+    <script src="{%static 'js/script.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!--Blogs page-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{%static 'images/home/MLSC Logo.png' %}" />
+    <link rel="apple-touch-icon" href="{%static 'images/home/MLSC Logo.png' %}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Learn Student Club</title>
+
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="{%static 'images/home/MLSC Logo.png' %}" alt="Logo" class="team-logo">
+            <a href="{% url 'home' %}" class="logo">Microsoft Learn Student Club<span class="animate" style="--i:1;"></span></a>
+        </div>
+
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+
+        <nav class="navbar">
+            <a href="{% url 'home' %}" id="index-link" class="active">Home</a>
+            <a href="{% url 'team' %}" id="teams-links" >Team</a>
+            <a href="{% url 'event' %}" id="events-link">Events</a>
+            <a href="{% url 'blog' %}" id="blogs-link">Blog</a>
+            <a href="{% url 'project' %}" id="projects-link">Projects</a>
+            <a href="#contact" id="teams-link"></a>
+
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+    </header>
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title"></h1>
+        </div>
+    </div>
+    <section class="services" id="services">
+        <h2 class="heading">Our Blogs</h2>
+        <div class="services-container">
+            <div class="services-box">
+                <div class="content">
+                    <i class='bx bxl-medium'></i>
+                    <h3>Unveiling Excellence: 
+                        The Inauguration of the Microsoft Learn Student Club at 
+                        Sri Vasavi Engineering College</h3>
+                    <div class="btn-box">
+                        <a href="https://link.medium.com/4aHNce3OlEb" target="_blank" class="btn btn-blogs">Read More</a>
+                    </div>
+                </div>
+                <div class="image-container-blogs">
+                    <img src="{%static 'images/blogs/blogs-img.jpg' %}" alt="Blogs Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- footer design -->
+        <footer class="footer">
+    
+            <div class="footer-iconTop">
+                <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+            </div>
+        </footer>
+    
+    <script src="{%static 'js/script.js' %}"></script>
+</body>
+
+</html>
