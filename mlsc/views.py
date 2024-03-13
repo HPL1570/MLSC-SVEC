@@ -8,6 +8,7 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.core.mail import send_mail
 from django.conf import settings
+import traceback
 
 
 import os
@@ -49,6 +50,8 @@ def storeDetails(request):
     
     return render(request, 'index.html', {'error_message': error_message})
 # def sentmail(name,email,rolln,con,clg):
+import traceback
+
 def sendIn(request):
     if request.method == 'POST':
         try:
@@ -69,6 +72,14 @@ def sendIn(request):
                 sendmail(name=fn, email=email, rollno=rolln, branch=branch, event=event)
                 obj.save()
                 return render(request, 'index.html', {'error_message': error_message})
+        except Exception as e:
+            print("An error occurred:", e)
+            # Print the traceback
+            traceback.print_exc()
+            # Log the error or handle it appropriately
+            error_message = f'An error occurred while processing your request: {str(e)}'
+            return render(request, 'index.html', {'error_message': error_message})
+
         except Exception as e:
             print("An error occurred:", e)
             # Log the error or handle it appropriately
