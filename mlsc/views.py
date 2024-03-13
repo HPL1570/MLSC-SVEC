@@ -4,6 +4,11 @@ import pandas as pd
 import smtplib
 from django.core.mail import send_mail
 from django.conf import settings
+from django.template.loader import render_to_string  # Add this import
+from django.utils.html import strip_tags
+
+
+
 
 import os
 # Create your views here.
