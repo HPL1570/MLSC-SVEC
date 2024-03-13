@@ -1,0 +1,106 @@
+<!-- email_template.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLSC Workshop Invitation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000451; /* Deep Blue */
+            color: #fff; /* White text */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+        }
+        header {
+            background-color: #1629c0; /* Dark Blue */
+            text-align: center;
+            padding: 20px;
+        }
+        header img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        main {
+            padding: 20px;
+            background-color: #000000; /* Deep Blue */
+            color: #fff; /* White text */
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #000000; /* Dark Blue */
+            padding: 10px;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+        }
+        .social-icons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .social-icons img {
+            max-width: 30px; /* Adjust the size as needed */
+            margin-right: 10px; /* Adjust the spacing between logos */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/mlsc/static/images/home/FRONT LOGO.png" alt="Logo" style="max-width: 200px;">
+            <h1 style="margin-top: 10px; color: #fff;">MLSC Workshop Invitation</h1>
+        </header>
+        <main>
+            <p>Dear {{ name }},</p>
+
+            <p>We are excited to invite you to our upcoming web development workshop! This workshop will be a great opportunity for you to enhance your skills and learn about the latest trends in web development.</p>
+
+            <p><strong>Workshop Details:</strong></p>
+            <ul>
+                <li><strong>Date:</strong> March 14, 2024</li>
+                <li><strong>Time:</strong> 10:00 AM IST</li>
+                <li><strong>Location:</strong> Swami Vivekananda Seminar Hall</li>
+                <li><strong>Agenda:</strong> To gain knowledge of the latest trends in web development</li>
+            </ul>
+
+            <p><strong>Registration:</strong> Your registration is accepted for {{ event }}!</p>
+            <p>Your details:</p>
+            <ul>
+                <li><strong>Roll number:</strong> {{ rollno }}</li>
+                <li><strong>Branch:</strong> {{ branch }}</li>
+            </ul>
+
+            <p>If you have any questions or need further information, feel free to contact us at coordinator.</p>
+
+            <p>We look forward to seeing you at the workshop!</p>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/" target="_blank"><img src="/mlsc/static/images/blogs/insta.png" alt="Instagram"></a>
+                <a href="https://wa.me/" target="_blank"><img src="/mlsc/static/images/blogs/wp.png" alt="WhatsApp"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="/mlsc/static/images/blogs/li.png" alt="LinkedIn"></a>
+            </div>
+        </main>
+        <footer>
+            <p>Best regards,<br>MLSC Team<br>MLSC SVEC</p>
+        </footer>
+    </div>
+</body>
+</html>
