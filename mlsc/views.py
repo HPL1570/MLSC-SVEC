@@ -50,7 +50,6 @@ def storeDetails(request):
     
     return render(request, 'index.html', {'error_message': error_message})
 # def sentmail(name,email,rolln,con,clg):
-import traceback
 
 def sendIn(request):
     if request.method == 'POST':
@@ -72,19 +71,6 @@ def sendIn(request):
                 sendmail(name=fn, email=email, rollno=rolln, branch=branch, event=event)
                 obj.save()
                 return render(request, 'index.html', {'error_message': error_message})
-        except Exception as e:
-            print("An error occurred:", e)
-            # Print the traceback
-            traceback.print_exc()
-            # Log the error or handle it appropriately
-            error_message = f'An error occurred while processing your request: {str(e)}'
-            return render(request, 'index.html', {'error_message': error_message})
-
-        except Exception as e:
-            print("An error occurred:", e)
-            # Log the error or handle it appropriately
-            error_message = 'An error occurred while processing your request'
-            return render(request, 'index.html', {'error_message': error_message})
 
 def sendmail(name=None, email=None, rollno=None, branch=None, event=None):
     subject = "Invitation from MLSC-SVEC workshop"
@@ -93,5 +79,5 @@ def sendmail(name=None, email=None, rollno=None, branch=None, event=None):
     from_email = settings.EMAIL_HOST_USER
     recipient = [email]
 
-    send_mail(subject, plain_message, from_email, recipient, html_message=html_message)
+send_mail(subject, plain_message, from_email, recipient, html_message=html_message)
 
