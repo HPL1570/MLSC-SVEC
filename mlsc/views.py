@@ -4,6 +4,11 @@ import pandas as pd
 import smtplib
 from django.core.mail import send_mail
 from django.conf import settings
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.core.mail import send_mail
+from django.conf import settings
+
 
 import os
 # Create your views here.
@@ -63,11 +68,12 @@ def sendIn(request):
             obj.save();
             
     return render(request, 'index.html', {'error_message': error_message})
-def sendmail(name=None, email=None, rollno=None,branch=None,event=None):
+def sendmail(name=None, email=None, rollno=None, branch=None, event=None):
     subject = "Invitation from MLSC-SVEC workshop"
     html_message = render_to_string('email.html', {'name': name, 'rollno': rollno, 'branch': branch, 'event': event})
     plain_message = strip_tags(html_message)
     from_email = settings.EMAIL_HOST_USER
     recipient = [email]
-    
+
     send_mail(subject, plain_message, from_email, recipient, html_message=html_message)
+
