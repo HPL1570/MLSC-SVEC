@@ -35,7 +35,7 @@ def storeDetails(request):
         contact = request.POST['contact']
         clgname = request.POST['clgname']
         
-        if Registration.objects.filter(rollnumber=rolln).exists() or Registration.objects.filter(email=email).exists():
+        if Registration.objects.filter(email=email).exists():
             print("EMAIL OR ROLLNUMBER ALREADY REGISTERED")
             error_message = 'EMAIL OR ROLLNUMBER ALREADY EXSISTED'
             return render(request, 'index.html', {'error_message': error_message})
