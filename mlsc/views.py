@@ -36,8 +36,8 @@ def storeDetails(request):
         clgname = request.POST['clgname']
         
         if Registration.objects.filter(email=email).exists():
-            print("EMAIL OR ROLLNUMBER ALREADY REGISTERED")
-            error_message = 'EMAIL OR ROLLNUMBER ALREADY EXSISTED'
+            print("EMAIL ALREADY REGISTERED")
+            error_message = 'EMAIL ALREADY EXSISTED'
             return render(request, 'index.html', {'error_message': error_message})
         else:
             error_message='YOUR REGISTRATION IS COMPLETED THANK YOU PLEASE CHECK YOUR MAIL FROM MLSC IF NOT FOUND CHECK IN JUNK MAIL'
@@ -56,9 +56,9 @@ def sendIn(request):
         rolln = request.POST['roll']
         branch = request.POST['branch']
         event = request.POST['event']
-        if EventRe.objects.filter(rollnumber=rolln).exists() or EventRe.objects.filter(email=email).exists():
-            print("EMAIL OR ROLLNUMBER ALREADY REGISTERED")
-            error_message = 'EMAIL OR ROLLNUMBER ALREADY EXSISTED'
+        if  EventRe.objects.filter(email=email).exists():
+            print("EMAIL  ALREADY REGISTERED")
+            error_message = 'EMAIL ALREADY EXSISTED'
             return render(request, 'index.html', {'error_message': error_message})
         else:
             error_message='YOUR REGISTRATION IS COMPLETED THANK YOU PLEASE CHECK YOUR MAIL FROM MLSC IF NOT FOUND CHECK IN JUNK MAIL'
