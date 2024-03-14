@@ -35,7 +35,7 @@ def storeDetails(request):
         contact = request.POST['contact']
         clgname = request.POST['clgname']
         
-        if Registration.objects.filter(email=email).exists():
+        if Registration.objects.filter(rollnumber=rolln).exists() or Registration.objects.filter(email=email).exists():
             print("EMAIL ALREADY REGISTERED")
             error_message = 'EMAIL ALREADY EXSISTED'
             return render(request, 'index.html', {'error_message': error_message})
@@ -56,7 +56,7 @@ def sendIn(request):
         rolln = request.POST['roll']
         branch = request.POST['branch']
         event = request.POST['event']
-        if  EventRe.objects.filter(email=email).exists():
+        if Registration.objects.filter(rollnumber=rolln).exists() or Registration.objects.filter(email=email).exists():
             print("EMAIL  ALREADY REGISTERED")
             error_message = 'EMAIL ALREADY EXSISTED'
             return render(request, 'index.html', {'error_message': error_message})
